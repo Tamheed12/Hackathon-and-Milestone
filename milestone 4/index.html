@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <section id="form-section">
+        <h1>Resume Builder</h1>
+        <form id="resume-form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+                
+                <label for="objective">Objective:</label>
+                <textarea id="objective" name="objective" rows="4" required></textarea>
+                
+                <label for="profile-image">Profile Image URL:</label>
+                <input type="url" id="profile-image" name="profile-image">
+            </fieldset>
+
+            <fieldset>
+                <legend>Education</legend>
+                <div id="education-fields">
+                    <div class="education-entry">
+                        <label for="edu-school-1">School:</label>
+                        <input type="text" id="edu-school-1" name="edu-school[]" required>
+                        
+                        <label for="edu-degree-1">Degree:</label>
+                        <input type="text" id="edu-degree-1" name="edu-degree[]" required>
+                        
+                        <label for="edu-year-1">Year:</label>
+                        <input type="text" id="edu-year-1" name="edu-year[]" required>
+                    </div>
+                </div>
+                <button type="button" id="add-education">Add More Education</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Work Experience</legend>
+                <div id="experience-fields">
+                    <div class="experience-entry">
+                        <label for="job-title-1">Job Title:</label>
+                        <input type="text" id="job-title-1" name="job-title[]" required>
+                        
+                        <label for="job-company-1">Company:</label>
+                        <input type="text" id="job-company-1" name="job-company[]" required>
+                        
+                        <label for="job-year-1">Year:</label>
+                        <input type="text" id="job-year-1" name="job-year[]" required>
+                        
+                        <label for="job-description-1">Description:</label>
+                        <textarea id="job-description-1" name="job-description[]" rows="4" required></textarea>
+                    </div>
+                </div>
+                <button type="button" id="add-experience">Add More Experience</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Skills</legend>
+                <div id="skills-fields">
+                    <div class="skills-entry">
+                        <label for="skill-1">Skill:</label>
+                        <input type="text" id="skill-1" name="skills[]" required>
+                    </div>
+                </div>
+                <button type="button" id="add-skill">Add More Skills</button>
+            </fieldset>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+    </section>
+
+    <section id="resume-section" style="display: none;">
+        <div id="resume-content"></div>
+        <button id="edit-resume">Edit Resume</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
